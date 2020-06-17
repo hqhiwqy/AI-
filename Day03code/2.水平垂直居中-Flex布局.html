@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Document</title>
+        <style>
+            /* 为了解决侧轴的居中对齐的问题 */
+            html, body{
+                height: 100%;
+            }
+
+            body{
+                /* 给body元素进行Flex布局 */
+                display: flex; 
+                /* 设置主轴的对齐方式：居中 */
+                justify-content: center; 
+                /* 设置侧轴的对齐方式：居中 */
+                align-items: center;
+            }
+
+            .box{
+                width: 300px;
+                height: 300px;
+                background: pink;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="box"></div>
+    </body>
+</html>

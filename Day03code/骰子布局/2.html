@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body{
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #ffffff;
+        }
+
+        .first-face, .second-face, .third-face, .forth-face, .fifth-face, .sixth-face{
+            width: 104px;
+            height: 104px;
+            background-color: #e7e7e7;
+            border-radius: 10%;
+            padding: 4px;
+            margin: 16px;
+            box-shadow: 0 5px #ffffff inset,
+                        0 -5px #bbbbbb inset,
+                        5px 0   #d7d7d7 inset,
+                        -5px 0 #d7d7d7 inset;
+        }
+        .dot{
+            display: block;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background-color: #333333;
+            box-shadow: 0 3px #111111 inset,
+                        0 --3px #555555 inset;
+            margin: 4px;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- 骰子1 -->
+    <div class="first-face">
+        <span class="dot"></span>
+    </div>
+    <!-- 骰子2 -->
+    <div class="second-face">
+        <span class="dot"></span>
+        <span class="dot"></span>
+    </div>
+    <!-- 骰子3 -->
+    <div class="third-face">
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+    </div>
+    <!-- 骰子4 -->
+    <div class="forth-face">
+        <div class="column">
+            <span class="dot"></span>
+            <span class="dot"></span>
+        </div>
+        <div class="column">
+            <span class="dot"></span>
+            <span class="dot"></span>
+        </div>
+    </div>
+    <!-- 骰子5 -->
+    <div class="fifth-face">
+        <div class="column">
+            <span class="dot"></span>
+            <span class="dot"></span>
+        </div>
+        <div class="column">
+            <span class="dot"></span>
+        </div>
+        <div class="column">
+            <span class="dot"></span>
+            <span class="dot"></span>
+        </div>
+    </div>
+    <!-- 骰子6 -->
+    <div class="sixth-face">
+        <div class="column">
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+        </div>
+        <div class="column">
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+        </div>
+    </div>
+</body>
+</html>
