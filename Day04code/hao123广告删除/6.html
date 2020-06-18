@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .ad {
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+
+        .ad img {
+            width: 90px;
+            height: 90px;
+            transition: all .2s;
+        }
+
+        .ad:hover img {
+            width: 110px;
+            height: 110px;
+        }
+
+        .ad .closeBtn {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-top: -8px;
+            margin-left: -10px;
+            cursor: pointer;
+            display: block; /*将行内元素span转换成块级元素*/
+            width: 22px;
+            height: 22px;
+            background: url(./hao123.png) no-repeat -512px -208px;
+        }
+    </style>
+    <script>
+        //window.onload()-当页面内容完全加载完成会立即触发该事件
+        window.onload = function(){
+        //1.给span元素绑定鼠标点击事件-onclick
+        document.getElementById('J_close').onclick = function(){
+            //2.将div元素隐藏，设置display=none
+            document.getElementById('J_ad').style.display = "none"
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="ad" id="J_ad">
+        <a href="#">
+            <img src="./dati.png" alt="答题换礼">
+        </a>
+        <span class="closeBtn" id="J_close"></span>
+    </div>
+    
+</body>
+</html>
