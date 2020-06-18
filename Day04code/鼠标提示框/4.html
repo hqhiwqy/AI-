@@ -18,13 +18,22 @@
         }
     </style>
 </head>
+<script >
+    function appear(){
+        document.getElementById('J_tips').style.display = 'block'
+    }
+    function disapper(){
+        document.getElementById('J_tips').style.display = 'none'
+    }
+</script>
 <body>
-    <label for="remmber" onmouseover="document.getElementById('J_tips').style.display='block'
-    "onmouseout="document.getElementById('J_tips').style.display='none'">
-        <input id="remmber" type="checkbox"> 记住账号
+    <label for="remmber" onmouseover="appear()"onmouseout="disapper()">
+    <input id="remmber" type="checkbox"> 记住账号
     </label>
     <div class="tips" id="J_tips">
         为了您的信息安全，请不要在网吧或公用电脑上使用此功能！
     </div>
+
+ 
 </body>
 </html>
