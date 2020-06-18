@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 200px;
+            height: 200px;
+            background-color: aqua;
+        }
+    </style>
+</head>
+<body>
+    <button id="show">显示</button>
+    <button id="hide">隐藏</button>
+    <div class="box" id="box"></div>
+    <script>
+        //显示按钮下绑定鼠标点击事件
+        document.getElementById('show').onclick = function(){
+            document.getElementById('box').style.display = 'block';
+        }
+   
+         //隐藏按钮下绑定鼠标点击事件
+        document.getElementById('hide').onclick = function(){
+            document.getElementById('box').style.display = 'none';
+        }
+    </script>
+</body>
+</html>

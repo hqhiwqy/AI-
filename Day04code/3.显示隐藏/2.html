@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 200px;
+            height: 200px;
+            background-color: aqua;
+        }
+    </style>
+</head>
+<body>
+    <button id="show">显示</button>
+    <button id="hide">隐藏</button>
+    <div class="box" id="box"></div>
+    <script>
+         //获取div元素的对象，并赋值给变量oBox
+         var oBox = document.getElementById('box');
+
+         //获取显示按钮元素的对象，并赋值给变量oShow
+         var oShow = document.getElementById('show');
+
+         //获取隐藏按钮元素的对象，并赋值给变量oHide
+         var oHide = document.getElementById('hide');   
+
+
+        //显示按钮下绑定鼠标点击事件
+        oShow.onclick = function(){
+            oBox.style.display = 'block';
+        }
+   
+         //隐藏按钮下绑定鼠标点击事件
+       oHide.onclick = function(){
+            oBox.style.display = 'none';
+        }
+    </script>
+</body>
+</html>
