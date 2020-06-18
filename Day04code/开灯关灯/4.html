@@ -1,0 +1,40 @@
+<!-- 开始为白天 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .night{
+            background: black;
+            color: white;
+        }
+        .day{
+            background: white;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <button id="btn">开灯/关灯</button>
+    <p>白天不懂夜的黑~</p>
+    <script>
+        //获取button元素对象，并且赋值给变量oBtn
+        var oBtn  = document.getElementById('btn')
+
+        //获取body元素对象，直接通过document.body,并且赋值给变量oBody
+        var oBody = document.body
+
+        //给button元素绑定鼠标点击事件
+        oBtn.onclick = function(){
+            console.log(oBody.className)
+            if(oBody.className ==""||oBody.className=="day"){
+               oBody.className = "night"         
+            }else{
+                oBody.className = "day"
+            }
+        }
+
+    </script>
+</body>
+</html>
