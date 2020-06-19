@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 300px;
+            height: 300px;
+            background: pink;
+        }
+    </style>
+</head>
+<body>
+    <button onclick="setStyle('background','yellow')">变背景颜色为黄色</button>
+    <button onclick="setStyle('width','200px')">变宽为200px</button>
+    <button onclick="setStyle('height','200px')">变高为500px</button>
+    <button onclick="setStyle('fontSize','60px')">变字体大小为60px</button>
+    <button onclick="setStyle('color','blue')">变字体颜色为绿色</button>
+    <div class="box" id="box">你好</div>
+    <script>
+        function setStyle(name,value){
+            // 当要修改的属性不固定的时候可以使用[]
+            // 但凡用.的地方可以换[],反之不行
+            document.getElementById('box').style[name] =value;
+        }
+    </script>
+</body>
+</html>
