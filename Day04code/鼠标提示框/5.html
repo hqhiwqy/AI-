@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .tips{
+            display: none;
+            width: 180px;
+            background-color: #fffde4;
+            border: 1px solid #dfb86d;
+            text-align: left;
+            padding: 5px 10px;
+            line-height: 18px;
+            color: #dc9632;
+            border-radius: 4px;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+    <label for="remmber" id="J_remmber">
+        <input id="remmber" type="checkbox" /> 记住账号
+    </label>
+    <div class="tips" id="J_tips">
+        为了您的信息安全，请不要在网吧或公用电脑上使用此功能！
+    </div>
+    <script>
+        //获取label元素对象，并且赋值给变量oLabel
+        var oLabel = document.getElementById('J_remmber')
+
+        //获取div元素对象，并且赋值给变量oDiv
+        var oDiv = document.getElementById('J_tips')
+
+        //给oLabel元素对象绑定鼠标移入事件
+        oLabel.onmouseover = function(){
+            oDiv.style.display = "block"
+        }
+
+        //给oDiv元素对象绑定鼠标移出事件
+        oDiv.onmouseout = function(){
+            oDiv.style.display = "none"
+        }
+    </script>
+</body>
+</html>
