@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <button id="quanxuan">全选</button>
+    <button id="buxuan">不选</button>
+    <button id="fanxuan">反选</button>
+    <div id="inputs">
+        <input type="checkbox"><br>
+        <input type="checkbox"><br>
+        <input type="checkbox"><br>
+        <input type="checkbox"><br>
+        <input type="checkbox"><br>
+        <input type="checkbox"><br>
+        <input type="checkbox"><br>
+        <input type="checkbox"><br>
+        <input type="checkbox"><br>
+    </div>
+    <hr />
+    <input type="checkbox">
+    <script>
+        //获取全选按钮的元素对象，并且赋值给变量oQuanxuan
+        var oQuanxuan = document.getElementById('quanxuan')
+
+        //获取不选按钮的元素对象，并且赋值给变量oBuxuan
+        var oBuxuan = document.getElementById('buxuan')
+
+        //获取反选按钮的元素对象，并且赋值给变量oFanxuan
+        var oFanxuan = document.getElementById('fanxuan')
+
+        /*
+        //获取页面中所有的input元素，并且赋值给变量aInput
+
+        var aInput = document.getElementsByTagName('input')
+
+        console.log(aInput)
+        */
+
+        //获取id=inputs的DIV元素，并赋值给变量oInputs
+        var oInputs = document.getElementById('inputs')
+        
+        //获取div下所有的input元素，并赋值给aInput
+        var aInput = oInputs.getElementsByTagName('input')
+
+        console.log(aInput)
+
+        //给全选按钮绑定鼠标点击事件
+        oQuanxuan.onclick = function(){
+            for(var i = 0;i <= aInput.length-1; i++){
+                aInput[i].checked = true
+            }
+        }
+
+        //给不选按钮绑定鼠标点击事件
+        oBuxuan.onclick = function(){
+            for(var i = 0;i <= aInput.length-1; i++){
+                aInput[i].checked = false
+            }
+        }
+
+        //给反选按钮绑定鼠标点击事件
+        oFanxuan.onclick = function(){
+            for(var i = 0;i <= aInput.length-1; i++){
+                if(aInput[i].checked == false){
+                    aInput[i].checked = true
+                }else{
+                    aInput[i].checked = false
+                }
+            }
+        }
+    </script>
+
+</body>
+</html>

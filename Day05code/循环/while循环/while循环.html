@@ -1,0 +1,26 @@
+<!-- 求1-100之间所有数的和 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //栗子： 求1+2+3+4=？
+        var i = 1
+        var sum = 0
+        while(i<=4){
+            sum  = sum + i 
+            i = i + 1 //等于i++ 或i+=1
+        }
+        console.log(sum) //10
+
+        //i=1 第1次循环 sum=sum+i=0+1=1  i=1+1=2
+        //i=1 第2次循环 sum=sum+i=1+2=3  i=2+1=3
+        //i=1 第3次循环 sum=sum+i=3+3=6  i=3+1=4
+        //i=1 第4次循环 sum=sum+i=6+4=10 i=4+1=5
+        //i=5 循环终止
+    </script>
+</body>
+</html>

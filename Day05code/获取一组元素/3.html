@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+    .box{
+        width: 200px;
+        height: 200px;
+        border: 1px solid pink;
+        float:left;
+    }
+
+    </style>
+</head>
+<body>
+    <div class="box">1</div>
+    <div class="box">2</div>
+    <div class="box">3</div>
+    <div class="box">4</div>
+    <div class="box">5</div>
+
+    <script>
+        //获取一组元素-使用方法document.getElementsByTagName('标签名')
+    
+        //获取页面中所有的div元素，并赋值给变量aDiv
+        var aDiv = document.getElementsByTagName('div')
+        
+        console.log(aDiv,aDiv[0])
+        
+        aDiv[0].style.background = "red"
+        aDiv[1].style.background = "red"
+        aDiv[2].style.background = "red"
+        aDiv[3].style.background = "red"
+        aDiv[4].style.background = "red"
+    
+    </script>
+</body>
+</html>

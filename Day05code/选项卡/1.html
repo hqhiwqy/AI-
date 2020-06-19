@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            /* 怪异模式 */
+            box-sizing: border-box;
+        }
+        
+        body{
+            padding: 100px;
+        }
+
+        .card{
+            width: 300px;
+        }
+
+        .card .title{
+            list-style: none;
+            cursor: pointer;
+        }
+
+        .card .title li{
+            float: left;
+            width: 100px;
+            height: 40px;
+            line-height: 40px;
+            border: 1px solid #333;
+            text-align: center;
+        }
+           
+        .card .title li.active{
+            background-color: red;
+            color: #333333;
+        }
+        .card div {
+            display: none;
+            clear: both;
+            width: 300px;
+            height: 400px;
+            border: 1px solid #333333;
+        }
+
+        .card div.active{
+            display:block;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <ul class="title">     
+            <li class="active">标题一</li>
+            <li>标题二</li>
+            <li>标题三</li>
+        </ul>   
+        <div class="active">内容一</div>
+        <div>内容二</div>
+        <div>内容三</div>
+    </div>
+</body>
+</html>
