@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <input type="text" placeholder="第一个数" id="numone">
+        +
+        <input type="text" placeholder="第二个数" id="numtwo">
+        =
+        <input type="text" disabled id="result">
+        
+        <!-- 给button设置type="button",避免点击按钮的时候直接提交表单 -->
+        <button type="button" id="btn">计算</button>
+    </form>
+    <script>
+        //一.分别获取各个input元素对象和button元素对象，并存储在各自的变量
+
+        //1.获取第一个数的input对象，并赋值给变量oNumone
+
+        var oNumone = document.getElementById('numone')
+
+        //2.获取第二个数的input对象，并赋值给变量oNumtwo
+
+        var oNumtwo = document.getElementById('numtwo')
+
+        //3.获取显示结果的input对象，并赋值给变量oResult
+        var oResult = document.getElementById('result')
+
+        //4.获取按钮button对象，并赋值给变量oBtn
+        var oBtn = document.getElementById('btn')
+
+        //二.给button按钮绑定鼠标点击事件
+        oBtn.onclick =function(){
+            var result = 0
+            //三、实现计算的过程
+            
+            //1.获取第一个数的值，并赋值给变量sNumone
+            var sNumone = oNumone.value
+            //console.log(sNumone,typeof sNumone) String
+            
+            //2.获取第二个数的值，并赋值给变量sNumtwo
+            var sNumtwo = oNumtwo.value
+            
+            //3.分别将第一个数和第二个数进行强制转换 string->number
+            var numone = parseFloat(sNumone)
+
+            var numtwo = parseFloat(sNumtwo)
+
+            //4.计算结果
+            result = numone + numtwo
+
+            console.log(result)
+            //5.显示结果
+            oResult.value = result
+        }       
+
+    </script>
+</body>
+</html>
