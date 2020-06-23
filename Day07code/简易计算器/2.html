@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <input type="text" placeholder="第一个数" id="numone">
+        <select id="ysf">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>
+            <option value="/">/</option>
+        </select>
+        <input type="text" placeholder="第二个数" id="numtwo">
+        =
+        <input type="text" disabled id="result">
+        <button type="button" id="btn">计算</button>
+    </form>
+
+    <script>
+        //1.分别获取各个元素对象
+
+        //获取第一个数的input元素对象，并赋值给oNumone
+        var oNumone = document.getElementById('numone')
+
+        //获取第二个数的input元素对象，并赋值给oNumtwo
+        var oNumtwo = document.getElementById('numtwo')
+
+        //获取显示结果的input元素对象，并赋值给oResult
+        var oResult = document.getElementById('result')
+
+        //获取计算按钮的button元素对象，并赋值给oBtn
+        var oBtn = document.getElementById('btn')
+
+        //获取运算符的select元素对象，并赋值给oYsf
+        var oYsf = document.getElementById('ysf')
+
+        var sYsf = "+" //用来存储运算符号，默认求和
+        
+        //2.给下拉框select绑定一个鼠标切换事件——onchange
+
+        oYsf.onchange = function(){
+            //alert('ok')
+            
+            //console.log(oYsf.options,oYsf.options.selectedIndex)
+            
+            var index = oYsf.options.selectedIndex
+
+            //console.log(oYsf.options[index].value)
+
+            sYsf = oYsf.options[index].value
+        }
+
+        //3.给计算button按钮绑定鼠标点击事件——onclick
+
+        oBtn.onclick = function(){
+            var result = 0
+
+            var sNumone = oNumone.value
+            var sNumtwo = oNumtwo.value
+
+            if(sNumone === ""){
+                alert('第一个数不能为空！')
+                return
+            }    
+            if(isNaN(sNumone)){
+                alert('第一个数输入有误！')
+                return //一旦return 下面的程序就会终止进行
+            }
+            if(sNumtwo === ""){
+                alert('第二个数不能为空！')
+                return
+            }    
+            if(isNaN(sNumtwo)){
+                alert('第二个数输入有误！')
+                return //一旦return 下面的程序就会终止进行
+            }
+
+            //强转换
+            var numone = parseFloat(sNumone)
+            var numtwo= parseFloat(sNumtwo)
+
+            //根据运算符号实现计算逻辑，并计算出结果
+            switch(sYsf){
+                case "+" :
+                    result = numone + numtwo
+                    break
+                case "-" :
+                    result = numone - numtwo
+                    break
+                case "*" :
+                    result = numone * numtwo
+                    break
+                case "/" :
+                    result = numone / numtwo
+                    break
+
+            }
+            //显示计算结果
+            oResult.value = result
+        }
+        
+    </script>
+</body>
+</html>

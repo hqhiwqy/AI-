@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //break  continue
+
+        //求1+2+3+4=？
+
+        var sum = 0
+        for(var i = 1; i <= 4;i++){
+            sum += i
+        }
+        console.log(sum) //10
+
+        var sum = 0
+        for(var i = 1; i <= 4;i++){
+            if (i == 4) {
+                break //跳出循环  终止当前循环 
+            }
+            sum += i
+        }
+        console.log(sum) //6    
+
+        // 求1-100之间所有偶数的和
+        var sum = 0
+        for(var i = 1; i <= 100; i++){
+            if (i % 2 == 0 ) {
+                sum += i 
+            }
+        }
+       console.log(sum) // 2550
+       
+       
+        var sum = 0
+        for(var i = 1; i <= 100; i++){
+            if (i % 2 != 0 ) {
+                continue // 终止当前循环，同时会继续下一次循环
+            }
+            sum += i
+        }
+        console.log(sum)
+
+    </script>
+</body>
+</html>

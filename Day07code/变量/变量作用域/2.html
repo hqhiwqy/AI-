@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    var a = 10 // 全局变量
+
+    function test (){
+        a = 20  //将全局变量重新赋值为20
+        console.log(a) 
+    }
+
+    test() //20
+
+    console.log(a) //20
+</script>
+</body>
+</html>

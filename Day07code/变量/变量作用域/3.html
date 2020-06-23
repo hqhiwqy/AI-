@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    var a = 10 // 全局变量
+
+    function test (){
+        var   a = 20  //局部变量：只在函数内起作用
+        console.log(a)  //20
+    }
+
+    test() //20
+        console.log(a)  //10
+</script>
+</body>
+</html>

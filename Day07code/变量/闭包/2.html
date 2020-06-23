@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //全局变量虽然好用，但是不要滥用！不然会出现全局变量滥用的问题。
+
+        var x //全局变量
+        function a(){
+             x = 10 //重新赋值
+        }
+        function b(){
+            console.log(x)
+        }
+
+        a()
+        b() //10
+
+    </script>
+</body>
+</html>

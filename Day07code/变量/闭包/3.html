@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //子函数b函数可以使用父函数a的局部变量  称作闭包
+        function a(){
+            var x = 10 //局部变量
+            function b(){
+                console.log(x)
+            }
+            b()
+        }
+            a()
+
+    </script>
+</body>
+</html>

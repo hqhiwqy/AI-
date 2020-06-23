@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //&&、  ||、  ！
+
+        var a = "高"
+        var b = "富"
+        var c = "帅"
+
+        //&& 逻辑与, 并且：所有条件为真才为真，只要有一个条件为假，即为假
+        if(b == '富' && a == "高" && c == "帅"){
+            console.log('OK')
+        }else{
+            console.log('Bye')
+        }
+
+        // ||逻辑或，或者：所有条件只要有一个条件成立，则为真，只有当所有的条件都不成立，才为假
+        if(a == '高' || b == '富' || c == '帅'){
+            console.log('Ok')
+        }else{
+            console.log('Bye')
+        }
+        
+
+        // ! 逻辑否 取反
+
+        var  bool = false
+        if(!bool){
+            console.log('True')
+        }else{
+            console.log('False')
+        }
+
+    </script>
+</body>
+</html>
