@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //构造函数 + 原型的混合方式来模拟类
+        
+        function createPerson (name, age){
+        
+            //构造函数负责添加属性
+
+            this.name = name
+
+            this.age = age
+        
+        }
+            
+            //原型负责添加方法
+            
+            Person.prototype.say = function(){
+                console.log("我叫" + this.name + "今年" + this.age + "岁。")
+            }
+
+            Person.prototype.eat = function(){
+                console.log(this.name + "正在吃饭")
+
+            }
+        
+
+        var p1 =new createPerson('caocao',18) //添加new 解决工厂方式存在的问题一 没有new
+
+        p1.say()
+        p1.eat()
+
+        var p2 =new createPerson('栗子',18) //this指向新new出来的对象p2
+
+        p2.say()
+        p2.eat()
+    </script>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+            var a0 // undefined false
+
+            var a1 = "" // 空字符串 false
+
+            var a2 = null // null 对象 false
+
+            var a3 = 0 // 整数0  false
+
+            var a4 = "0" // 字符串0 true
+
+            var a5 = [] // 空数组 true
+
+            var a6 = [1, 2] // 非空数组 true
+
+            var a7 = {} // 空对象 true
+
+            var a8 = {name: 'jayjun'} // 非空对象 true
+
+            var a9 = true // true
+
+            var a10 = false // false
+
+            var a11 = "true" // 字符串true true
+
+            var a12 = "false" // 字符串false true
+
+            var a13 = 18 // 非零数字 true
+
+            var a14 = "null" // 字符串null true
+    
+            if (a0) {
+                console.log("true")
+            } else {
+                console.log("false")
+            }
+            
+            var arr = []  //空数组
+
+            console.log(typeof arr) //object
+
+            if(arr){
+                console.log("true")
+            }else{
+                console.log("false")
+            }
+
+             // 结论：既然arr是一个object，那么用于判断条件的话会转换为true
+
+             if (arr == true) {
+                console.log("true")
+            } else {
+                console.log("false")
+            }
+
+            console.log(Number(arr), Number(true)) // 0 1
+
+            if (arr == false) {
+                console.log("true")
+            } else {
+                console.log("false")
+            }
+
+            console.log(Number(arr), Number(false)) // 0 0 
+
+            // 结论：任何值和布尔值进行比较时，两边的数都会转换为number类型
+
+            // 最终结论：当空数组作为判断条件的时候，相当于true；当空数组和布尔值进行比较的时候，相当于false。
+
+    
+    </script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <div id="box1" style="width: 200px; height: 100px; border: 1px solid red;"></div>
+    <div id="box2" style="width: 100px; height: 200px; border: 1px solid red;"></div>
+    <script>
+        // CSS函数
+        // 1、返回样式：两个参数 例如：css(obj, 'width')
+        // 2、设置样式：三个参数 例如：css(obj, 'width', '100px')
+
+        function css()
+        {
+            // 返回
+            if (arguments.length == 2) {
+                return arguments[0].style[arguments[1]]
+            }
+
+            // 设置
+            if (arguments.length == 3) {
+                arguments[0].style[arguments[1]] = arguments[2]
+            }
+        }
+
+        var oBox1 = document.getElementById('box1')
+
+        var w = css(oBox1, 'width') // 返回id=box1的div元素的width属性的值
+        // oBox1.style.width
+
+        console.log(w)
+
+        css(oBox1, 'background', 'green')
+        // oBox1.style.background = 'green'
+
+        var oBox2 = document.getElementById('box2')
+
+        var h = css(oBox2, 'height')
+
+        console.log(h)
+
+    </script>
+</body>
+</html>

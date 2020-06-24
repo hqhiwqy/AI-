@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <button type="button" id="btn">button</button>
+    <script>
+        (function (){
+            console.log('aaa')
+        }) ();
+
+
+        (function(){
+            console.log('bbb')
+        })();
+
+        //事件中使用匿名函数
+        var oBtn = document.getElementById('btn')
+
+        oBtn.onclick = function(){
+            console.log('ccc')
+        }
+
+        //对象
+        var person1 = {
+            name:'cccao',
+            age: 18,
+            say: function(){
+                return "我叫" + this.name + "今年" + this.age + "岁"
+            }
+        }
+        console.log(person1.say())
+
+        //函数表达式
+
+        //将匿名函数赋值给变量fn
+        var fn = function(){
+            return "我是一只小行星！"
+        }
+        
+        //调用方式和调用普通函数是一样的
+        console.log(fn())
+
+        // ***回调函数***
+        setInterval(function(){
+            console.log('我是一个回调函数，每次一秒钟会被执行一次！')
+        },1000)
+
+        //返回值
+        function fn2(){
+            return function(){
+                return '我是返回值！'
+            }
+        }
+
+        console.log(fn2()())
+
+        //或
+        var fn3 = fn2()
+
+        console.log(fn3())
+    </script>
+</body>
+</html>

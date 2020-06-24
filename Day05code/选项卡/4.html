@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            /* 怪异模式 */
+            box-sizing: border-box;
+        }
+        
+        body{
+            padding: 100px;
+        }
+
+        .card{
+            width: 300px;
+        }
+
+        .card .title{
+            list-style: none;
+            cursor: pointer;
+        }
+
+        .card .title li{
+            float: left;
+            width: 100px;
+            height: 40px;
+            line-height: 40px;
+            border: 1px solid #333;
+            text-align: center;
+        }
+           
+        .card .title li.active{
+            background-color: red;
+            color: #333333;
+        }
+        .card div {
+            display: none;
+            clear: both;
+            width: 300px;
+            height: 400px;
+            border: 1px solid #333333;
+        }
+
+        .card div.active{
+            display:block;
+        }
+    </style>
+</head>
+<body>
+    <div class="card" id="card">
+        <ul class="title">     
+            <li class="active">标题一</li>
+            <li>标题二</li>
+            <li>标题三</li>
+        </ul>   
+        <div class="active">内容一</div>
+        <div>内容二</div>
+        <div>内容三</div>
+    </div>
+    <script>
+        //获取选项卡元素对象，并赋值给变量oCard
+        var oCard = document.getElementById('card')
+
+        //获取选项卡下所有的标题li元素对象，并赋值给变量aLi
+        var aLi = oCard.getElementsByTagName('li')
+
+        //获取选项卡下所有内容div元素对象，并且赋值给变量aDiv
+        var aDiv = oCard.getElementsByTagName('div')
+    
+        //给标题li元素绑定鼠标点击事件
+        var len = aLi.length
+        for(var i = 0;i <= len-1;i++){
+            console.log(i);  // 0 1 2
+        
+            (function (_i){
+                aLi[_i].onclick = function(){
+                //alert('ok')
+                //1.标题实现
+                
+                     for (var j = 0;j <= len-1;j++){
+                    
+                    //1.1清除所有标题li元素的激活状态
+                        aLi[j].className = ""
+                    
+                    //2.1隐藏内容的div元素
+                        aDiv[j].className = ""
+                
+                }
+                
+                    //1.2激活当前的标题li元素
+                        this.className = "active"
+
+                     //2.内容实现
+                        console.log(_i)
+               
+
+                //2.显示当前标题li元素对应的内容div元素
+                        aDiv[_i].className = "active"
+                }
+            })(i)   
+        }
+    </script>
+</body>
+</html>

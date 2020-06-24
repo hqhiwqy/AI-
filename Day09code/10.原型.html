@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //例子:为Array添加sum求和方法
+
+        var arr1 = [1,234,45,678]
+
+        arr1.sum = function(){
+            var result = 0 
+            for(var i = 0;i < arr1.length; i ++){
+                result += arr1[i]
+            }
+            return result
+        }
+
+        var sum1 = arr1.sum()
+
+        console.log(sum1)
+
+        var arr2 = [1,2,3]
+
+        //arr2.sum() // 错误！TypeError: arr2.sum is not a function
+    </script>
+</body>
+</html>

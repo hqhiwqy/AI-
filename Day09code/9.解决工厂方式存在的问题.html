@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //构造函数
+        function createPerson (name0, age0){
+            console.log(this)
+            
+            //1.原料
+            // var obj  =  new Object() //创建一个空白对象
+
+            //2.加工
+            this.name = name0
+
+            this.age = age0
+        }
+            
+            //添加方法
+            
+            createPerson.prototype.say = function(){
+                console.log("我叫" + this.name + "今年" + this.age + "岁。")
+            }
+
+            createPerson.prototype.eat = function(){
+                console.log(this.name + "正在吃饭")
+
+            }
+
+            // 3 出厂
+            // return obj
+
+        
+
+        var p1 =new createPerson('caocao',18) //添加new 解决工厂方式存在的问题一 没有new
+
+        p1.say()
+        p1.eat()
+
+        var p2 =new createPerson('栗子',18) //this指向新new出来的对象p2
+
+        p2.say()
+        p2.eat()
+    </script>
+</body>
+</html>

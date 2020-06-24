@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 数组的转换
+
+        //数组的合并——concat()
+
+        var arr1 = ['a', 'b', 'c']
+        var arr2 = ['d', 'e', 'f']
+
+        var arr3 = arr1.concat(arr2)
+        
+        var arr4 = arr2.concat(arr1)
+        
+        console.log(arr3,arr4)
+
+        //数组转换字符串
+        var aUrl = ['www', 'moocba', 'com']
+
+        var sUrl = aUrl.join('.')
+
+        console.log(sUrl) //www.moocba.com
+
+        var sUrl2 = aUrl.join()
+        
+        console.log(sUrl2)  //www,moocba,com
+
+        var sUrl3 = aUrl.join('')
+        
+        console.log(sUrl3)  //wwwmoocbacom
+
+        var sUrl4 = aUrl.join(' ')
+        
+        console.log(sUrl4)  //www moocba com
+        
+        //字符串转数组——split()
+
+        var arr = sUrl.split('.')
+
+        console.log(arr)
+
+        //字符串替换——replace()
+        
+
+
+    </script>
+</body>
+</html>

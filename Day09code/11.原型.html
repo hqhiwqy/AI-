@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //例子:为Array添加sum求和方法
+ 
+        //什么是原型？——prototype 被定义为：给其他对象提供共有属性和方法的对象
+        
+        var arr1 = [1,234,45,678]
+
+        Array.prototype.sum =function(){
+            var result = 0
+            for(var i = 0;i < this.length; i++){
+                result += this[i]
+            }
+                return result
+        }
+
+        var res1 = arr1.sum()
+
+        console.log(res1)
+
+        var arr2 = [1, 2, 3]
+
+        var res2 = arr2.sum()
+
+        console.log(res2)
+    </script>
+</body>
+</html>

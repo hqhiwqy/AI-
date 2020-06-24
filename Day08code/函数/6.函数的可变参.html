@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //案例：求所有参数的和
+
+        function sum(){
+            var len = arguments.length
+            var sum = 0
+           // console.log(arguments) //参数数组
+            for(var i = 0;i <= len - 1;i++ ){
+                sum += arguments[i] 
+            }
+            return sum
+        }
+        console.log(sum(1))
+        console.log((1,2))
+        console.log((1,2,3))
+        console.log((1212,334,15,89,8899))
+
+
+    </script>
+</body>
+</html>
