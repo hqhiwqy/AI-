@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //传址赋值（引用赋值）
+
+        var arr1 = [1, 2, 3]
+
+        var arr2 = arr1
+
+        console.log(arr1, arr2)
+
+        arr2.push(4)
+
+        console.log(arr1, arr2)
+
+        arr1.push(5)
+
+        console.log(arr1, arr2)
+
+        //传值（普通赋值）
+
+        var a = 10 
+
+        var b = a
+
+        console.log(a,b) // 10  10 
+
+        b = 20
+
+        console.log(a,b)// 10 20 
+
+        a = 30
+
+        console.log(a,b)//30 20
+    </script> 
+</body>
+</html>

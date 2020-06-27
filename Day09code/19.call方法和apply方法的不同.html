@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //每一个函数都包含两个非继承来的方法：call方法和apply方法
+
+        //call()方法和apply()方法——属于Function.prototype的一个方法，所以每一个函数对象都自动拥有call()方法和apply()方法
+
+        //作用：call方法和apply方法都是改变this指向
+
+        //区别：
+
+        //call方法
+        //call(obj, arg1, arg2, ……) 参数列表
+
+        //apply方法
+        //apply(obj, [arg1, arg2, ……]) 参数数组
+
+        function sum (x, y){
+            console.log(this)
+            console.log(this.a + this.b + x + y)
+        }
+        var o = {a:1 ,b:2}
+
+        sum.call(o, 3, 4) //1 + 2 + 3 + 4 = 10
+        sum.apply(o, [3, 4]) //1 + 2 + 3 + 4 = 10
+    </script>
+</body>
+</html>

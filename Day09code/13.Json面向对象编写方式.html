@@ -1,0 +1,43 @@
+<!-- 单体对象 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var person1 = {
+            name: "caocao",
+            age: 18,
+            sex: "nan",
+            say: function(){
+                console.log("我叫" + this.name + ",今年" + this.age + "岁。") 
+            },
+            eat: function(){
+                console.log(this.name + "正在吃饭。")
+            }
+        }
+        console.log(person1.name)
+
+        person1.say()
+        person1.eat()
+
+        var person2 = {
+            name: "lizi",
+            age: 18,
+            sex: "nan",
+            say: function(){
+                console.log("我叫" + this.name + ",今年" + this.age + "岁。") 
+            },
+            eat: function(){
+                console.log(this.name + "正在吃饭。")
+            }
+        }
+        console.log(person2.name)
+        
+        person2.say()
+        person2.eat()
+    </script>
+</body>
+</html>

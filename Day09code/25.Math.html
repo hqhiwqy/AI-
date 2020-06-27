@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //舍入方法——Math.cell()  Math.floor()  Math.round()
+
+        //Math.cell() —— 向上取整
+        //Math.floor()—— 向下取整
+        //Math.round()——四舍五入取整
+
+        console.log(Math.ceil(25.9)) //26
+
+        console.log(Math.ceil(25.5)) //26
+
+        console.log(Math.ceil(25.1)) //26
+
+        console.log(Math.floor(25.9)) //25
+        
+        console.log(Math.floor(25.5)) //25
+
+        console.log(Math.floor(25.1)) //25
+
+        console.log(Math.round(25.9)) //26
+
+        console.log(Math.round(25.5)) //26
+
+        console.log(Math.round(25.1)) //25
+
+        //random()方法——返回介于0-1之间的随机数，包括0不包括1
+
+        //常用公式：
+        //值 = Math.floor(Math.random() * 可能值的总数 + 第一个可能的值)
+
+        //随机获取一个1-10之间的数值
+
+        var num = Math.floor(Math.random() * 10 + 1 )
+
+        console.log(num)
+
+        //随机获取一个2-10之间的数值
+
+        var num2 = Math.floor(Math.random() * 9 + 2 )
+
+        console.log(num2)
+
+        function random(lowerValue,upperValue){
+            var choices = upperValue - lowerValue + 1
+            return Math.floor(Math.random() * choices + lowerValue)
+        }
+
+        var num3 = random(2,10)
+
+        console.log(num3)
+
+
+        //思考题，如何高效的产生m个n范围内的不重复的随机数（m<=n)
+
+        var getRandomNumber = function(n,m){
+
+        }
+        
+
+    </script> 
+</body>
+</html>

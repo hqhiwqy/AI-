@@ -1,0 +1,28 @@
+<!-- 错误方法，局部变量没法调用 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //成员A
+        (function(){
+            var name = "aa" //局部变量
+        }) ();
+    </script>
+
+    <script>
+        //成员B
+        (function(){
+            var name = "bb" //局部变量
+        }) ();
+    </script>
+    
+    <script>
+        //成员C
+        console.log(name)
+    </script>
+</body>
+</html>

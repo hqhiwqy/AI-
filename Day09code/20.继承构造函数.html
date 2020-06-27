@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 构造函数 + 原型的混合方式模拟一个动物类
+
+        // 构造函数负责添加属性
+        function Animal(name, age) {
+            this.name = name
+            this.age = age
+            this.type = "动物"
+        }
+
+        // 原型负责添加方法
+        Animal.prototype.say = function() {
+            return "I am a" + this.type + "My name is " + this.name + "I am " + this.age + "years old."
+        }
+
+        // 定义Dog类继承Animal类
+
+        // 继承Animal类的构造函数
+        function Dog(name, age) {
+            Animal.call(this, name, age) // 让父类内部的this指向子类的对象
+        }
+
+        // 实例化一个狗对象
+        var wangcai = new Dog('旺财', 2)
+
+        console.log(wangcai.name, wangcai.age, wangcai.type)
+
+    </script> 
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //命名空间 : 团队合作开发时，为避免js冲突，需要避免全局变量的泛滥。  把同一类属性、方法包在一个json对象里。
+
+        //成员A
+
+        var GLOBAL = {}  //GLOBAL 避免和Global静态对象冲突
+
+        GLOBAL.A = {}
+
+        GLOBAL.A.name = "cc"
+
+        GLOBAL.A.say = function(){
+            console.log("我叫" + this.name)
+        }
+
+
+    </script>
+
+    <script>
+        //命名空间
+
+        //成员B
+
+        GLOBAL.B = {}
+
+        GLOBAL.B.name = "bb"
+
+        GLOBAL.B.say = function(){
+            console.log("我叫" + this.name)
+        }
+
+    </script>
+
+    <script>
+        //成员C
+
+        console.log(GLOBAL.A.name)
+
+        GLOBAL.A.say()
+
+        GLOBAL.B.say()
+    </script>
+</body>
+</html>

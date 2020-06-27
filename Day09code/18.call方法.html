@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //call()方法——属于Function.prototype的一个方法，所以每一个函数对象都自动拥有call()方法
+
+        //this总是指向调用某个方法的对象。使用call方法作用主要是改变this的指向。
+
+        function demo (){
+            console.log(this)
+        }
+
+        demo()  //this指向window对象
+        demo.call() //this指向window对象
+        demo.call('abc') //this指向abc这个字符串对象
+        demo.call('cba') //this指向cba这个字符串对象
+
+
+        var o = {a: 1,b: 2}
+
+        function sum(x, y){
+          //console.log(this)  //this指向o对象
+            console.log(this.a + this.b + x + y)
+        }
+
+        //sum(3, 4)
+
+        sum.call(o, 3, 4) // 1+2+3+4 =10 this指向o对象
+    </script>
+</body>
+</html>
