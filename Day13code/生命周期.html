@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div ref="app" id="app">
+        {{title}}
+    </div>
+    <script>
+        let vm = new Vue({
+            el:"#app",
+            data:{
+                title:"草草"
+            },
+            //创建前
+            beforeCreate(){
+                console.log('即将创建');
+                console.log(this.$data);// undefined
+                console.log(this.$el) //undefined
+            },
+            //创建后
+            created(){
+                console.log('创建完毕');
+                console.log(this.$data); //可以读到data数据
+                console.log(this.$el);          
+            },
+             //载入前
+             beforeMount(){
+                 console.log('即将挂载');
+                 console.log(this.$el); //不再是undefined，成功获取到我们挂载的元素内容，但是还没成功渲染数据
+            },
+            //载入后
+            mounted(){
+                console.log('挂在完毕');
+                console.log(this.$el); //成功获取到挂载的元素内容，同时成功渲染数据
+            },
+            //更新前
+            beforeUpdate(){
+                console.log('即将更新渲染');
+                let title = this.$refs.app.innerHTML;
+                console.log(`title的值为${title}`);
+            },
+            //更新后
+            updated(){
+                console.log('更新完毕');
+                let title = this.$refs.app.innerHTML;
+                console.log(`title的值为${title}`);
+            },
+            //销毁前
+            beforeDestroy(){
+                console.log('销毁之前');
+            },
+            //销毁后
+            destroyed(){
+                console.log('销毁之后');//vue实例销毁之后，视图再也不会更新。
+            }
+        })
+    </script>
+</body>
+</html>

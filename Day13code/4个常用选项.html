@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <h2>{{title}}-{{desc}}</h2>
+        <div>
+            数字1：{{num1 | toInt}}
+            数字2：{{num2 | toRound}}
+        </div>
+        <div>
+            计算num1 + num2：{{sum}}
+        </div>
+        <div>
+            {{num3}}
+            <!-- v-on指令来绑定点击事件 -->
+            <button v-on:click="plus">+1</button>
+            <!-- @click=""简写 -->
+            <button @click="minus">-1</button>
+        </div>
+    </div>
+    <script>
+        let vm = new Vue({
+            //挂载元素
+            el:"#app",
+            //添加数据
+            data:{
+                title:"Vue.js",
+                desc:'一款渐进式JavaScript框架',
+                num1:33.33,
+                num2:44.44,
+                num3:0
+            },
+            //过滤器
+            filters:{
+                //小数转整数
+                toInt(value){
+                    return parseInt(value)
+                },
+                //四舍五入
+                toRound(value){
+                    return Math.round(value)
+                }
+            },
+            //计算属性
+            computed:{
+                sum(){
+                    return this.num1 + this.num2
+                }
+            },
+            //方法
+            methods:{
+                //+1
+                plus(){
+                    return this.num3++;
+                },
+                //-1
+                minus(){
+                    return this.num3--;
+                }
+            },
+            //观察选项 是Vue提供用于检测指定数据发生改变的API
+            watch:{
+                num3(){
+                    console.log('num3有变化了，最新值：',this.num3)
+                }
+            },
+
+
+
+        })
+
+
+    </script>
+</body>
+</html>

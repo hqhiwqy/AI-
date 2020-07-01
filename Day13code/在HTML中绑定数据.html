@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <div v-html="title"></div>
+        <div>
+            <a v-bind:href="link">vue.js官网</a>
+            <!-- v-bind简写 -->
+            <a :href="link">vue.js官网</a>
+        </div>
+        <div>
+            {{num + 3}}
+            {{ok ? 'yes' : 'no'}}
+            <a :href=" 'https://' +host">vue.js官网</a>
+        </div>
+    </div>
+    <script>
+         let vm = new Vue({
+             //挂载元素
+            el:"#app",
+            //添加数据
+            data:{
+                title:'<h2>vue.js</h2>',
+                link:'https://cn.vuejs.org',
+                num: 2,
+                ok: false,
+                host: 'cn.vuejs.org'
+            },
+        })
+    </script>
+    
+</body>
+</html>
