@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <style>
+        .unit {
+            width: 600px;
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 20px;
+        }
+        .unit h2{
+            font-size: 20px;
+        }
+
+        .unit .info .original{
+            border: 1px solid #ccc;
+            padding: 2px 5px;
+            border-radius: 5px;
+            font-size: 12px;
+        }
+
+    </style>
+</head>
+</head>
+<body>
+    <div id="app">
+ <!-- <my-article :detail="articles[0]"></my-article>
+        <my-article :detail="articles[1]"></my-article>
+        <my-article :detail="articles[2]"></my-article> -->
+
+        <my-article v-for="item in articles" :detail="item"></my-article>
+    </div>
+    <script>
+    //注册一个my-article
+    Vue.component('my-article', {
+            props: ['detail'],
+            template: `
+                <div class="unit">
+                    <img :src="detail.cover" width="200px">
+                    <div class="content">
+                        <h2>{{detail.title}}</h2>
+                        <div class="info">
+                            <span>{{detail.date}}</span>
+                            <span class="original" v-show="detail.is_original">原创</span>
+                        </div>
+                    </div>
+                </div>`
+        })
+    let vm = new Vue({
+        el:"#app",
+        data:{
+            //添加文章的数据
+            articles:[
+                {
+                    title: '省城坡子街、北仓巷等道路将改造',
+                        date: '2020-07-01',
+                        cover: 'http://cms-bucket.ws.126.net/2020/0701/7c189862p00qcrzno004dc0009c005uc.png?imageView&thumbnail=140y88&quality=85',
+                        is_original: true
+            },
+            {
+                        title: '太原有些考生须提供核酸检测报告',
+                        date: '2020-06-21',
+                        cover: 'http://cms-bucket.ws.126.net/2020/0701/efbea77dp00qcrzkt004bc0009c005uc.png?imageView&thumbnail=140y88&quality=85',
+                        is_original: true
+                    },
+                    {
+                        title: '因道路施工太原11条公交线路改线',
+                        date: '2020-04-01',
+                        cover: 'http://cms-bucket.ws.126.net/2020/0701/34f44587p00qcrziz003cc0009c005uc.png?imageView&thumbnail=140y88&quality=85',
+                        is_original: false
+                    },
+                    {
+                        title: '一图读懂省委十一届十次全会!!!!!',
+                        date: '2019-04-01',
+                        cover: 'http://cms-bucket.ws.126.net/2020/0701/ceb99e90p00qcrzg50029c0009c005uc.png?imageView&thumbnail=140y88&quality=85',
+                        is_original: true
+                    }
+    
+            
+            ]
+        }
+    })
+</script>
+</body>
+</html>

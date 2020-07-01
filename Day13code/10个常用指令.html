@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <!-- <p>{{message}}</p> -->
+        <p v-text ="message"></p>
+        <p v-html ="message"></p>
+        <p v-show="show1">你看得见我</p>
+        <p v-show="show2">你看不见我</p>
+        <p v-if="show1">我是true</p>  <!--显示-->
+        <p v-if="show2">我是false</p>   <!--隐藏-->
+        <p>记住一点：如果需要频繁切换显示和隐藏，就用v-show；如果你运行后不太可能切换显示和隐藏，就用v-if。</p>
+        <p v-if="show3">我是if</p>
+        <p v-else>我是else</p>
+        <P v-else="show3">我是else</P>
+        <p v-if>我是if</p>
+
+        <div>
+            <p v-for="item in students">{{item}}</p>
+        </div>
+        <div>
+            <p v-for="(item, index) in students">{{index+1}} {{item}}</p>
+        </div>
+        <div>
+            <p v-for="(item, index) in students2">{{index+1}} {{item.name}} {{item.age}} {{item.sex}}</p>
+        </div>
+        <!-- v-bind -->
+        <div>
+            <a v-bind:href="logo.linkUrl">
+                <img v-bind:src="logo.imgSrc" width="200px">
+            </a>
+        </div>
+        <!-- v-bind 简写 -->
+        <div>
+            <a :href="logo.linkUrl">
+                <img :src="logo.imgSrc" width="200px">
+            </a>
+        </div>
+        <!-- v-on -->
+        <div>
+            <button v-on:click="say('Vue')">点击</button>
+            <button v-on:click="say('Python')">点击</button>
+        </div>
+        <!-- v-on 简写 -->
+        <div>
+            <button @click="say('Vue')">点击</button>
+            <button @click="say('Python')">点击</button>
+        </div>
+        <!-- v-model -->
+        <div>
+            <input type="text" v-model="msg">
+            <p>你输入的内容：{{msg}}</p>
+        </div>
+        <!-- v-once -->
+        <div>
+            <input type="text" v-model="msg2">
+            <p v-once>你输入的内容：{{msg2}}</p>
+        </div>
+    </div>
+    <script>
+        let vm = new Vue({
+            el:"#app",
+            data:{
+                message:'<strong>Hello Vue!</strong>',
+                show1:true,
+                show2:false,
+                show3:true,
+                students:['张三','李四','王五'],
+                students2:[
+                    {
+                        name:'张三',
+                        age:18,
+                        sex:'男'
+                    },
+                    {
+                        name:'李四',
+                        age:28,
+                        sex:'男'
+                    },
+                    {
+                        name:'王五',
+                        age:35,
+                        sex:'男'
+                    }
+                ],
+                logo:{
+                    imgSrc: 'https://cn.vuejs.org/images/logo.png',
+                    linkUrl:  'https://cn.vuejs.org'
+                },
+                msg:"",  
+                msg2:"hello v-once"       
+            },
+            methods:{
+                say(name){
+                    console.log('hello',name);
+                }
+            }
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <style>
+        .unit {
+            width: 600px;
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 20px;
+        }
+        .unit h2{
+            font-size: 20px;
+        }
+
+        .unit .info .original{
+            border: 1px solid #ccc;
+            padding: 2px 5px;
+            border-radius: 5px;
+            font-size: 12px;
+        }
+
+    </style>
+</head>
+</head>
+<body>
+    <div id="app">
+        <my-article></my-article>
+        <my-article></my-article>
+        <my-article></my-article>
+    </div>
+    <script>
+    //注册一个my-article
+    Vue.component('my-article',{
+        template:`    
+        <div class="unit">
+        <img src="http://cms-bucket.ws.126.net/2020/0701/66554156p00qcs5w600i7c000s600e3c.png?imageView&thumbnail=140y88&quality=85" alt="">
+        <div class="content">
+            <h2>云南昭通洪涝灾害已造成3人遇难 3万多人受灾</h2>
+            <div class="info">
+                <span>2020-07-01</span>
+                <span class="original">原创</span>
+            </div>  
+        </div>
+    </div>`
+    })
+    let vm = new Vue({
+        el:"#app"
+    })
+</script>
+</body>
+</html>

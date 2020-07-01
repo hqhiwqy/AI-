@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <style>
+        .body{
+            font-size: 30px;
+        }
+        .edit{
+            width: 400px;
+            height: 40px;
+            line-height: 40px;
+            border: 1px solid #cccccc;
+            border-radius: 4px;
+            padding-left: 20px;
+            box-shadow: 0 0 5px #cccccc;
+            margin: 30px auto;
+        }
+
+        .list{
+            width: 400px;
+        }
+
+        .unit{
+            position: relative;
+            padding: 10px 0;
+            border-bottom: 1px solid #efefef;
+        }
+
+        .unit:last-child{
+            border-bottom: 0;
+        }
+
+        .finished{
+            text-decoration: line-through;
+            color: #cccccc;
+        }
+
+        .deleteBtn{
+            background-color: red;
+            position: absolute;
+            right: 0;
+            top: 10px;
+            border: 0;
+            border-radius: 5px;
+            color: #fff;
+
+        }
+
+        .empty{
+            font-size: 16px;
+            color: #ccc;
+            text-align: center;
+
+        }
+    </style>
+
+
+</head>
+<body>
+    <div id="app">
+        <!-- @keydown.ente监听键盘中的enter键按下事件 -->
+        <input 
+            class="edit" 
+            type="text" 
+            placeholder="请输入任务" 
+            v-model="task.content"
+            @keydown.enter="addTask"  
+        >
+        <div class="List">
+            <div class="unit" v-for="(item,index) in taskList">
+                <input type="checkbox" @click="changeState(index)">
+                <span :class="{'finished': item.finished}">{{item.content}}</span>
+                <button class="deleteBtn" @click="removeTask(index)">删除</button>
+            </div>
+            <div class="empty" v-if="taskList.length ===0">暂无数据</div>
+        </div>
+    </div>
+    <script>
+        const vm = new Vue({
+            el:"#app",
+            data:{
+                
+                //一个任务
+                task:{
+                    content:"",
+                    finished:false,
+                    deleted:false,
+                },
+                
+                //任务列表
+                taskList:[]
+            },
+            methods:{
+                //添加任务
+                addTask(){
+                    // console.log('添加任务')
+                    
+                    // 将当前创建的任务添加到任务列表中
+                    this.taskList.push(this.task);
+
+                    //console.log(this.taskList)
+                    
+                    //重置task
+                    this.task = {
+                        content:"",
+                        finished:false,
+                        deleted:false,
+                    }
+                },
+                
+                //点击修改任务状态
+                changeState(index){
+                   //console.log(index);
+                   let currentState = this.taskList[index].finished;
+                   this.taskList[index].finished = !currentState;
+                },
+
+                //删除任务
+                removeTask(index){
+                    this.taskList.splice(index, 1);
+                }
+            },
+
+        })
+
+        //每个任务：任务内容(content)、任务是否完成(finished:false)、任务是否删除(deleted:false)
+
+
+
+    </script>
+</body>
+</html>

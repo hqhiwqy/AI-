@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <style>
+        .success{
+            color: rgb(0, 255, 72);
+        }
+        
+        .error{
+            color: brown;
+        }
+        
+        .f40{
+            font-size: 40px;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <!-- 对象语法 -->
+        <p :class="{'success':isSuccess, 'error':isError}">我是p元素</p>
+        <!-- 数组语法 -->
+        <p :class="[successClass,errorClass,fontsizeClass]">我是P元素</p>
+        
+        <p :style="{'color':colorStyle}">我是p元素</p>
+    
+    </div>
+    <script>
+        let vm = new Vue({
+            el: "#app",
+            data: {
+                isSuccess: true,
+                isError: false,
+                successClass:'success',
+                errorClass:'error',
+                fontsizeClass:'f40',
+                colorStyle:'blue'
+            }
+        })
+
+
+    </script>
+</body>
+</html>
