@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 引入Vue 库 -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <!-- 引入vuex -->
+    <script src="https://unpkg.com/vuex"></script>
+</head>
+<body>
+    <script>
+        //创建 store 实例,store 称为仓库，利用这个仓库来对我们的状态进行管理。
+        const store = new  Vuex.Store({
+            //state 存储
+            state: {
+                count: 1    
+            },
+            //派生出来的状态
+            getters:{
+                newCount:(state) => state.count * 100
+            },
+            //更改store状态唯一途径
+            mutations:{
+                increment(state,num){
+                    state.count += num
+                }
+            }
+        })
+
+        //提交一个名为increment的mutation
+        store.commit('increment',10)
+    </script>
+</body>
+</html>

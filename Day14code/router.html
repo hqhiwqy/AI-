@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 引入Vue 库 -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <!-- 引入Vue Router插件 -->
+    <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
+</head>
+<body>
+    <div id="app">
+      <!--   两个新组件：router-link和router-view ，前者用于帮助用户进行视图导航，类似a标签；
+            后者组件负责渲染匹配到视图组件，也就是渲染router-link指向的目标地址 -->
+    
+      <!-- 左侧导航栏区域 -->
+        <div class="nav">
+            <router-link to="/js">JavaScript</router-link>
+            <router-link to="/py">Python</router-link>
+            <router-link to="/go">Go</router-link>
+        </div>
+        <!-- 右侧内容区域 -->
+        <div class="content">
+            <router-view></router-view>
+        </div>
+    </div>
+    <script>
+        //定义路由对应的组件
+
+        const jsComponent ={
+            template:`<div>这是JavaScript学习内容</div>`
+        }
+
+        const pyComponent ={
+            template:`<div>这是Python学习内容</div>`
+        }
+
+        const goComponent ={
+            template:`<div>这是Go学习内容</div>`
+        }
+
+        //创建router实例，并且定义导航（路由）和组件的映射关系
+
+        const router = new VueRouter({
+            //配置routes
+            routes:[
+                {
+                    path:"/",
+                    component:jsComponent
+                },
+                
+                {
+                    path:"/js",
+                    component:jsComponent
+                },
+
+                {
+                    path:"/py",
+                    component:pyComponent
+                },
+
+                {
+                    path:"/go",
+                    component:goComponent
+                },
+            ]
+        })
+
+        //创建Vue实例，注入路由router
+
+        const vm = new Vue({
+            el:"#app",
+            router  //此处是ES6语法，相当于 router: router
+        })
+    </script>
+</body>
+</html>
