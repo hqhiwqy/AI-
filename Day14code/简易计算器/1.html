@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #app {
+            width: 400px;
+            border: 1px solid #ccc;
+        }
+
+        .result {
+            height: 150px;
+            background-color: #ccc;
+            display: flex;
+            justify-content: flex-end;
+            align-items: flex-end;
+            padding: 20px;
+            font-size: 60px;
+            font-weight: bold;
+        }
+
+        .enter {
+            height: 30px;
+            background-color: #ccc;
+            display: flex;
+            justify-content: flex-end;
+            align-items: flex-end;
+            padding: 20px;
+            font-size: 30px;
+        }
+
+        .keybords {
+            background-color: #ccc;
+            height: 400px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .keybords div{
+            background-color: #fff;
+            width: 23%;
+            height: 23%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 30px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .keybords div:first-child {
+            color: red;
+        }
+
+        .keybords div:last-child {
+            background-color: red;
+            color: #FFF;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <div class="result">0</div>
+        <div class="enter"></div>
+        <div class="keybords">
+            <!-- 键盘区域 -->
+            <div>clear</div>
+            <div>+</div>
+            <div>-</div>
+            <div>*</div>
+            <div>7</div>
+            <div>8</div>
+            <div>9</div>
+            <div>/</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+            <div>0</div>
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>=</div>
+        </div>
+    </div>
+</body>
+</html>

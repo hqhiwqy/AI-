@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <son :message="msg" @connect="say"></son>
+    </div>
+    <script>
+        //全局注册一个叫son的组件
+        Vue.component('son',{
+            data(){
+              return{
+                  title:'我是子组件的数据'
+              }  
+            },
+            props:['message'],
+            template:`<button @click="send">点击发送</button>`,
+            methods:{
+                send(){
+                    console.log('我触发了son组件的点击发送事件')
+                    this.$emit('connect',this.title);
+                }
+            }
+        })
+
+        let vm = new Vue({
+            el:"#app",
+            data:{
+                msg:"我是父组件中的数据"
+            },
+            methods:{
+                say(title){
+                    console.log('我监听到了connect的触发');
+                    console.log(title)
+                    
+                }
+            }
+        })
+
+    </script>
+</body>
+</html>

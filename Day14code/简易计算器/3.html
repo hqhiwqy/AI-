@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- 引入Vue 库 -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <!-- 引入vuex 插件 -->
+    <script src="https://unpkg.com/vuex"></script>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #app {
+            width: 400px;
+            border: 1px solid #ccc;
+        }
+
+        .result {
+            height: 150px;
+            background-color: #ccc;
+            display: flex;
+            justify-content: flex-end;
+            align-items: flex-end;
+            padding: 20px;
+            font-size: 60px;
+            font-weight: bold;
+        }
+
+        .enter {
+            height: 30px;
+            background-color: #ccc;
+            display: flex;
+            justify-content: flex-end;
+            align-items: flex-end;
+            padding: 20px;
+            font-size: 30px;
+        }
+
+        .keybords {
+            background-color: #ccc;
+            height: 400px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .keybords div{
+            background-color: #fff;
+            width: 23%;
+            height: 23%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 30px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .keybords div:first-child {
+            color: red;
+        }
+
+        .keybords div:last-child {
+            background-color: red;
+            color: #FFF;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <div class="result">0</div>
+        <div class="enter"></div>
+        <div class="keybords">
+            <!-- 键盘区域 -->
+            <keyboard v-for="item in keybords" :value="item"></keyboard>
+        </div>
+    </div>
+    <script>
+        // 创建仓库store
+        const store = new Vuex.Store({
+            // state 状态
+            state: {
+                result: "", // 计算结果
+                enter: "" // 输入的值
+            },
+            //定义名为calulate的mutation
+            mutation:{
+                calulate(state,value){
+                    console.log(state,value)
+                    switch(value){
+                        case'clear':
+                            //清空计算结果和输入的值
+                            state.result = state.enter = ""
+                            break;
+                        case '=':
+                            //进行结果计算
+                            state.result = eval(state.enter)
+                            break;
+                        default:
+                            //将输入的值enter进行拼接
+                            state.enter += value
+                    }
+                }
+            }
+        })
+
+        // 自定义一个keyboard组件
+        Vue.component('keyboard', {
+            // 接收的参数value，代表键盘的值
+            props: ['value'],
+            // 模板
+            template: `<div>{{value}}</div>`,
+            methods:{
+                getKeyboardValue(value){
+                    console.log(value)
+                    //通过commit提交mutation
+                    this.$store.commit('calculate',value)
+                }
+            },
+        })
+
+        // 创建一个vue实例
+        const app = new Vue({
+            el: "#app",
+            //注入store
+            store,
+            data: {
+                // 16个键盘的值
+                keybords: [
+                    'clear', '+', '-', '*',
+                    '7', '8', '9', '/',
+                    '4', '5', '6', '0',
+                    '1', '2', '3', '='
+                ]
+            }
+        })
+    </script>
+</body>
+</html>
