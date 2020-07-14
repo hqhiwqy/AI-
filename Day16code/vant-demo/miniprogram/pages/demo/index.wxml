@@ -1,0 +1,7 @@
+<!--pages/demo/index.wxml-->
+
+<view>
+ <button type="primary" >我是小程序原生button组件</button>
+ <van-button type="primary" plain="{{plain}}" round>我是van-button组件</van-button>
+ <van-button block>我是van-button组件</van-button>
+</view> 

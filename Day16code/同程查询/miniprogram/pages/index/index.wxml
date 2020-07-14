@@ -1,0 +1,103 @@
+<!--index.wxml-->
+
+<wxs src="../../utils/common.wxs" module="common" />
+
+<van-notice-bar
+  left-icon="bullhorn-o"
+  text="您只能查询到经由官方媒体发布的新型肺炎病毒感染者的行程，如未查询到行程信息并不代表一定没有与新型肺炎病毒感染者同程。同乘人员、可能接触人员返家后，暂不要外出，居家封闭隔离观察。如出现症状请就近到指定医院发热门诊救治。"
+/>
+
+<view class="header">
+  <view class="title">
+    <view>2019nCoV患者同程查询</view>
+    <van-button 
+      icon="share"
+      open-type="share" 
+      class="share"
+    >
+      分享给更多需要的人
+    </van-button>
+  </view>
+  <van-cell-group border="{{false}}">
+    <van-field
+      label="出行日期"
+      placeholder="例如2020-06-20"
+      disabled
+      right-icon='arrow'
+      bind:click-icon="dateOpen"
+      value="{{ dateValue }}"
+    />
+    <van-popup
+      show="{{ dateShow }}"
+      position="bottom"
+      bind:close="dateClose"
+    >
+      <van-datetime-picker
+        type="date"
+        title="请选择出行日期"
+        value="{{ currentDate }}"
+        min-date="{{ minDate }}"
+        max-date="{{ maxDate }}"
+        formatter="{{ formatter }}"
+        bind:cancel="dateClose"
+        bind:confirm="dateConfirm"
+      />
+    </van-popup>
+    <van-field
+      label="出行车次"
+      placeholder="车次或航班，例如T234"
+      bind:input="noInput"
+      value="{{ noValue }}"
+    />
+    <view class="btn">
+      <van-button type="info" size="small" bind:click="search">查询</van-button>
+      <van-button size="small" class="reset" bind:click="reset">重置</van-button>
+    </view>
+  </van-cell-group>
+</view>
+
+<view class="result">
+  <view class="total">
+    * 数据均搜集自官方媒体，截至目前共收录 
+    <text>{{ total }}</text> 条
+  </view>
+  <view class="caption">
+      <van-row>
+        <van-col span="4">日期</van-col>
+        <van-col span="6">交通</van-col>
+        <van-col span="10">车次/车牌/航班</van-col>
+        <van-col span="4">详情</van-col>
+      </van-row> 
+  </view>
+  <scroll-view 
+      scroll-y 
+      class="scrollView"
+      bindscrolltolower="scrolltolower"
+      bindscrolltoupper="scrolltoupper"
+  >
+    <block wx:if="{{data.length}}">
+
+      <navigator class="data" wx:for="{{data}}" wx:key="true" url="/pages/detail/index?id={{item._id}}">
+          <van-row>
+            <van-col span="4">{{common.removeYear(item.t_date)}}</van-col>
+            <van-col span="6">{{common.formatType(item.t_type)}}</van-col>
+            <van-col span="10">{{item.t_no}}</van-col>
+            <van-col span="4" class="icon">
+              详情
+              <van-icon name="/images/right.png" />
+            </van-col>
+          </van-row>
+      </navigator>
+
+      <view hidden="{{ loadAll }}">
+        <van-divider contentPosition="center" dashed>我也是有底线的</van-divider>
+      </view>
+
+    </block>
+
+    <view wx:else class="noData">
+      暂无官方新闻提及该行程或地点存在确诊病例，数据如有遗漏或错误，请反馈给我们！
+    </view>
+
+  </scroll-view>
+</view>

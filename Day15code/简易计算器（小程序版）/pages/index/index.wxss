@@ -1,0 +1,62 @@
+/**index.wxss**/
+page {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container{
+  width: 400px;
+  border: 1px solid #ccc;
+}
+
+.result {
+  height: 150px;
+  background-color: #ccc;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  padding: 20px;
+  font-size: 60px;
+  font-weight: bold;
+}
+
+.enter {
+  height: 30px;
+  background-color: #ccc;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  padding: 20px;
+  font-size: 30px;
+}
+
+.keybords {
+  background-color: #ccc;
+  height: 400px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.keybords view{
+  background-color: #fff;
+  width: 23%;
+  height: 23%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.keybords view:first-child {
+  color: red;
+}
+
+.keybords view:last-child {
+  background-color: red;
+  color: #FFF;
+}

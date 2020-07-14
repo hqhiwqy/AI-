@@ -1,0 +1,14 @@
+<!--index.wxml-->
+
+<view class="container">
+  <view class="result">{{result}}</view>
+  <view class="enter">{{enter}}</view>
+  <view class="keybords">
+      <!-- 键盘区域 -->
+      <view 
+        wx:for="{{keybords}}" 
+        bindtap="getKeyboardValue" 
+        data-value="{{item}}"
+      >{{item}}</view>
+  </view>
+</view>

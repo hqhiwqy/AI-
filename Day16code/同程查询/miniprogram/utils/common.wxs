@@ -1,0 +1,30 @@
+var removeYear = function(str) {
+  return str.replace('2020-', '');
+}
+
+
+var formatType = function(type) {
+  switch(type) {
+    case 1: 
+      return '飞机'
+    case 2:
+      return '火车'
+    case 3: 
+      return '地铁'
+    case 4:
+      return '长途客车/巴士' 
+    case 5: 
+      return '公交车'
+    case 6:
+      return '出租车'
+    case 7: 
+      return '轮船'
+    case 8:
+      return '其他'    
+  }
+}
+
+module.exports = {
+  removeYear: removeYear,
+  formatType: formatType
+}

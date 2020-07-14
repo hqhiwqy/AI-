@@ -1,0 +1,10 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/student/student"
+  ],
+  "window": {
+    "navigationBarTitleText": "我的书架"
+  },
+  "sitemapLocation": "sitemap.json"
+}

@@ -1,0 +1,105 @@
+<!--pages/detail/index.wxml-->
+
+<wxs src="../../utils/common.wxs" module="common" />
+
+<van-cell-group custom-class="mt20" border="{{false}}">
+    <van-cell>
+        <view slot="title" class="title">数据编号</view>
+        <view class="value">
+          <text>{{data.id}}</text>
+        </view>
+    </van-cell>
+    <van-cell>
+        <view slot="title" class="title">交通类型</view>
+        <view class="value">{{common.formatType(data.t_type)}}</view>
+    </van-cell>
+    <van-cell>
+        <view slot="title" class="title">日期</view>
+        <view class="value">{{data.t_date}}</view>
+    </van-cell>
+    <van-cell>
+        <view slot="title" class="title">车次/车牌/航班号/场所名</view>
+        <view class="value">
+          <text>{{data.t_no}}</text>
+        </view>
+    </van-cell>
+    <van-cell>
+        <view slot="title" class="title">车厢</view>
+        <view class="value">
+          <text>{{data.t_no_sub}}</text>
+        </view>
+    </van-cell>
+    <van-cell>
+        <view slot="title" class="title">出发站</view>
+        <view class="value">
+          <text>{{data.t_pos_start}}</text>
+        </view>
+    </van-cell>
+    <van-cell>
+        <view slot="title" class="title">到达站</view>
+        <view class="value">
+          <text>{{data.t_pos_end}}</text>
+        </view>
+    </van-cell>
+    <van-cell>
+        <view slot="title" class="title">车次附加描述</view>
+        <view class="value">
+          <text>{{data.t_memo}}</text>
+        </view>
+    </van-cell>
+    <van-cell>
+        <view slot="title" class="title">开始时间</view>
+        <view class="value">
+          <text>{{data.t_start}}</text>
+        </view>
+    </van-cell>
+    <van-cell>
+        <view slot="title" class="title">结束时间</view>
+        <view class="value">
+          <text>{{data.t_end}}</text>
+        </view>
+    </van-cell>
+    <van-cell>
+        <view slot="title" class="title">线索来源</view>
+        <view class="value">
+          <text>{{data.who}}</text>
+          <van-tag plain type="primary" data-source="{{data.source}}" bind:tap="onSetClipboardTap">复制网址</van-tag>
+        </view>
+    </van-cell>
+    <van-cell>
+        <view slot="title" class="title">提交时间</view>
+        <view class="value">
+          <text>{{data.created_at}}</text>
+        </view>
+    </van-cell>
+</van-cell-group>
+
+<van-goods-action>
+  <van-goods-action-icon
+    icon="chat-o"
+    text="错误反馈"
+    open-type="contact"
+  />
+
+  <van-goods-action-icon
+    wx:if="{{collectFlag}}" 
+    icon="star"
+    text="已收藏"
+    data-id="{{data.collect_id}}"
+    bind:click="removeCollect"
+  />
+
+  <van-goods-action-icon
+    wx:else
+    icon="star-o"
+    text="收藏"
+    data-id="{{data.id}}"
+    bind:click="addCollect"
+  />
+
+  <van-goods-action-button
+    type="warning"
+    text="分享给更多需要的人"
+    open-type="share"
+  />
+</van-goods-action>

@@ -1,0 +1,2 @@
+<!--pages/uploader/index.wxml-->
+<van-uploader file-list="{{ fileList }}" bind:after-read="afterRead" />
