@@ -19,8 +19,9 @@ def get_html(url, params=None, headers=None, method='GET'):
             response = requests.get(url, params=params, headers=headers)
         elif method == 'post' or method == 'POST':
             response = requests.post(url, params=params, headers=headers)
-
-        response.encoding = response.apparent_encoding
+        # 当从内容中分析出的响应编码不是Windows-1254，才执行response.encoding = response.apparent_encoding
+        if response.apparent_encoding != "Windows-1254":
+            response.encoding = response.apparent_encoding
         return response.text
     except Exception as err:
         print(err)
@@ -52,11 +53,14 @@ def tieba_spider(url, begin_page, end_page):
     for page in range(begin_page, end_page + 1):
         pn = (page - 1) * 50
         file_name = "./data/" + str(page) + ".html"
-        full_url = url + "&pn=" + str(pn)
-        html = get_html(full_url, headers=headers)
+        params = {
+            "kw": kw,
+            "pn": pn
+        }
+        html = get_html(url, params=params, headers=headers)
         write_page(html, file_name)
 
-    print('Success！')
+    print('Tieba Spider Success！')
 
 
 if __name__ == '__main__':
