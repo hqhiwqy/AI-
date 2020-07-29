@@ -138,3 +138,11 @@ https://github.com/ai-course-team/planeGame
 Day27
 Python面向对象编程实战-飞机大战：
 https://github.com/ai-course-team/Day27
+
+Day28
+初识爬虫
+https://github.com/ai-course-team/Day28
+
+Day29
+爬取网页数据、网页解析
+https://github.com/ai-course-team/Day29
