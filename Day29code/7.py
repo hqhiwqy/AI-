@@ -1,6 +1,5 @@
 # 案例：爬取百度贴吧
 
-import requests
 
 import requests
 
