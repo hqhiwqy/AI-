@@ -66,13 +66,13 @@ def get_info(url):
 
 
 if __name__ == "__main__":
-    file = open('maoyan-Top100.csv', 'w+', encoding="utf-8", newline="")
+    file = open('maoyan-Top100-2.csv', 'w+', encoding="utf-8", newline="")
     writer = csv.writer(file)
     writer.writerow(['Name', 'Score', 'Actor', 'Year'])
 
     headers = {
-        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko)"
-                      " Chrome/83.0.4103.97 Safari/537.36"
+            "User-Agent": "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) "
+                          "Chrome/83.0.4103.97 Mobile Safari/537.36"
     }
     urls = ["https://maoyan.com/board/4?offset={}".format(i) for i in range(0, 20, 10)]
     print(urls)
