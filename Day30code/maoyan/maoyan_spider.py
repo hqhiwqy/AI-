@@ -64,8 +64,8 @@ def get_info(url):
         writer = csv.writer(file)
         writer.writerow(['Name', 'Actor', 'Year', 'Score'])
         for name, score, actor, year in zip(names, scores, actors, years):
-           # print(name, score, actor, year)
-           writer.writerow([name, actor, year, score[0] + score[1]])
+            # print(name, score, actor, year)
+            writer.writerow([name, actor, year, score[0] + score[1]])
 
 
 if __name__ == "__main__":
