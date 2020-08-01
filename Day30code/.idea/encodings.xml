@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/lagou/city.json" charset="GBK" />
     <file url="file://$PROJECT_DIR$/maoyan/data/maoyan-top100-3.csv" charset="GBK" />
   </component>
 </project>
