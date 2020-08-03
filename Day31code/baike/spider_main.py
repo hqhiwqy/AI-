@@ -1,17 +1,17 @@
-from baike import url_manager
-import baike.html_downloader as html_downloader
-import baike.html_parser as html_parser
-import baike.html_outputer as html_outputer
+from baike.html_downloader import HtmlDownloader
+from baike.html_outputer import HtmlOutputer
+from baike.html_parser import HtmlParser
+from baike.url_manager import UrlManager
 
 
 class SpiderMain:
     """爬虫调度器"""
 
     def __init__(self):
-        self.urls = url_manager.UrlManager()
-        self.downloader = html_downloader.HtmlDownloader()
-        self.parser = html_parser.HtmlParser()
-        self.outputer = html_outputer.HtmlOutputer()
+        self.urls = UrlManager()
+        self.downloader = HtmlDownloader()
+        self.parser = HtmlParser()
+        self.outputer = HtmlOutputer()
 
     def craw(self, url):
         """爬取网页"""
@@ -25,7 +25,7 @@ class SpiderMain:
                 new_data, new_urls = self.parser.parse(html_text, new_url)
                 self.urls.add_new_urls(new_urls)
                 self.outputer.collect_data(new_data)
-                if count == 10:
+                if count == 20:
                     break
                 count += 1
             except Exception as e:

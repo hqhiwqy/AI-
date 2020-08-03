@@ -19,12 +19,12 @@ class HtmlParser:
         if html_text is None:
             return
         soup = BeautifulSoup(html_text, "html.parser")
-        new_data = self.get_new_data(soup, page_url)
-        new_urls = self.get_new_urls(soup, page_url)
+        new_data = self._get_new_data(soup, page_url)
+        new_urls = self._get_new_urls(soup, page_url)
 
         return new_data, new_urls
 
-    def get_new_data(self, soup, page_url):
+    def _get_new_data(self, soup, page_url):
         """
         作用：解析有效数据
         :param soup:
@@ -37,7 +37,7 @@ class HtmlParser:
         data['url'] = page_url
         return data
 
-    def get_new_urls(self, soup, page_url):
+    def _get_new_urls(self, soup, page_url):
         """
         作用：解析新的URL地址
         :param soup:

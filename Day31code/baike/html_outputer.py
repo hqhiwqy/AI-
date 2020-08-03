@@ -10,7 +10,7 @@ class HtmlOutputer:
         self.data.append(data)
 
     def output_html(self):
-        with open('output.html', 'w', encoding='utf-8') as f:
+        with open('output2.html', 'w', encoding='utf-8') as f:
             f.write("<html>")
             f.write("<head>")
             f.write("<title>爬取百度百科的1000个页面</title>")
