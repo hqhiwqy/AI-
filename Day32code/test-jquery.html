@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="./js/jquery-3.5.1.min.js"></script>
+</head>
+<body>
+    <p class="p1">I would like to say:</p>
+    <p class="p2">I would like to say:</p>
+    <script>
+        $(function(){
+            $(".p1").append("<b>Hello</b>")
+            $(".p2").prepend("<strong>Hqh,</strong>")
+            $("p").css({ "color": "#ff0011", "background": "blue" })
+        })
+    </script>
+</body>
+</html>
