@@ -1,0 +1,26 @@
+[INFO  - 2020-08-03T07:01:58.579Z] GhostDriver - Main - running on port 49173
+[INFO  - 2020-08-03T07:01:59.009Z] Session [396569c0-d557-11ea-89b2-db7fcc9db632] - page.settings - {"XSSAuditingEnabled":false,"javascriptCanCloseWindows":true,"javascriptCanOpenWindows":true,"javascriptEnabled":true,"loadImages":true,"localToRemoteUrlAccessEnabled":false,"userAgent":"Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/538.1 (KHTML, like Gecko) PhantomJS/2.1.1 Safari/538.1","webSecurityEnabled":true}
+[INFO  - 2020-08-03T07:01:59.009Z] Session [396569c0-d557-11ea-89b2-db7fcc9db632] - page.customHeaders:  - {}
+[INFO  - 2020-08-03T07:01:59.009Z] Session [396569c0-d557-11ea-89b2-db7fcc9db632] - Session.negotiatedCapabilities - {"browserName":"phantomjs","version":"2.1.1","driverName":"ghostdriver","driverVersion":"1.2.0","platform":"windows-10-32bit","javascriptEnabled":true,"takesScreenshot":true,"handlesAlerts":false,"databaseEnabled":false,"locationContextEnabled":false,"applicationCacheEnabled":false,"browserConnectionEnabled":false,"cssSelectorsEnabled":true,"webStorageEnabled":false,"rotatable":false,"acceptSslCerts":false,"nativeEvents":true,"proxy":{"proxyType":"direct"}}
+[INFO  - 2020-08-03T07:01:59.009Z] SessionManagerReqHand - _postNewSessionCommand - New Session Created: 396569c0-d557-11ea-89b2-db7fcc9db632
+[ERROR - 2020-08-03T07:02:04.358Z] Session [396569c0-d557-11ea-89b2-db7fcc9db632] - page.onError - msg: TypeError: null is not an object (evaluating 'MutationObserver.toString')
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-03T07:02:04.358Z] Session [396569c0-d557-11ea-89b2-db7fcc9db632] - page.onError - stack:
+  (anonymous function) (https://ss1.bdstatic.com/5eN1bjq8AAUYm2zgoY3K/r/www/cache/static/protocol/https/bundles/atom_aa06f6b.js:71)
+  (anonymous function) (https://ss1.bdstatic.com/5eN1bjq8AAUYm2zgoY3K/r/www/cache/static/protocol/https/bundles/atom_aa06f6b.js:72)
+  invokeFactory (https://dss0.bdstatic.com/5aV1bjqh_Q23odCf/static/superman/js/lib/esl-ef22c5ed31.js:12)
+  modTryInvokeFactory (https://dss0.bdstatic.com/5aV1bjqh_Q23odCf/static/superman/js/lib/esl-ef22c5ed31.js:13)
+  (anonymous function) (https://dss0.bdstatic.com/5aV1bjqh_Q23odCf/static/superman/js/lib/esl-ef22c5ed31.js:12)
+  each (https://dss0.bdstatic.com/5aV1bjqh_Q23odCf/static/superman/js/lib/esl-ef22c5ed31.js:30)
+  invokeFactory (https://dss0.bdstatic.com/5aV1bjqh_Q23odCf/static/superman/js/lib/esl-ef22c5ed31.js:11)
+  modTryInvokeFactory (https://dss0.bdstatic.com/5aV1bjqh_Q23odCf/static/superman/js/lib/esl-ef22c5ed31.js:13)
+  req (https://dss0.bdstatic.com/5aV1bjqh_Q23odCf/static/superman/js/lib/esl-ef22c5ed31.js:24)
+  (anonymous function) (https://ss1.bdstatic.com/5eN1bjq8AAUYm2zgoY3K/r/www/cache/static/protocol/https/bundles/atom_aa06f6b.js:121)
+  invokeFactory (https://dss0.bdstatic.com/5aV1bjqh_Q23odCf/static/superman/js/lib/esl-ef22c5ed31.js:12)
+  modTryInvokeFactory (https://dss0.bdstatic.com/5aV1bjqh_Q23odCf/static/superman/js/lib/esl-ef22c5ed31.js:13)
+  modAutoDefine (https://dss0.bdstatic.com/5aV1bjqh_Q23odCf/static/superman/js/lib/esl-ef22c5ed31.js:10)
+  loaded (https://dss0.bdstatic.com/5aV1bjqh_Q23odCf/static/superman/js/lib/esl-ef22c5ed31.js:17)
+  innerOnload (https://dss0.bdstatic.com/5aV1bjqh_Q23odCf/static/superman/js/lib/esl-ef22c5ed31.js:32)
+
+  phantomjs://platform/console++.js:263 in error
