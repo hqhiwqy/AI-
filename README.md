@@ -146,3 +146,11 @@ https://github.com/ai-course-team/Day28
 Day29
 爬取网页数据、网页解析
 https://github.com/ai-course-team/Day29
+
+Day30
+网页解析
+https://github.com/ai-course-team/Day30
+
+Day31
+编写简单爬虫架构
+https://github.com/ai-course-team/Day31
