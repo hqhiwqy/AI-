@@ -2,12 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1a1c3ed7-0a59-4bf8-a145-7ede40cb6801" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/baidu2.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/douban/douban.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/baidu.py" beforeDir="false" afterPath="$PROJECT_DIR$/baidu.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ghostdriver.log" beforeDir="false" afterPath="$PROJECT_DIR$/ghostdriver.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/中国.png" beforeDir="false" afterPath="$PROJECT_DIR$/中国.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/douban/douban.png" beforeDir="false" afterPath="$PROJECT_DIR$/douban/douban.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/douban/douban.py" beforeDir="false" afterPath="$PROJECT_DIR$/douban/douban.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/douban/ghostdriver.log" beforeDir="false" afterPath="$PROJECT_DIR$/douban/ghostdriver.log" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />

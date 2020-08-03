@@ -24,3 +24,27 @@ driver.find_element_by_class_name("btn-account").click()
 time.sleep(3)
 
 driver.save_screenshot("douban.png")
+
+# 举例：多力特的奇幻冒险
+driver.get("https://movie.douban.com/subject/27000981/comments")
+
+driver.save_screenshot("douban-comments.png")
+
+for i in range(1, 21):
+    content = driver.find_element_by_xpath('//*[@id="comments"]/div[{}]/div[2]/p/span'.format(i)).text
+    nikename = driver.find_element_by_xpath('//*[@id="comments"]/div[{}]/div[2]/h3/span[2]/a'.format(i)).text
+    userinfo = driver.find_element_by_xpath('//*[@id="comments"]/div[{}]/div[2]/h3/span[2]/a'.format(i)).get_attribute('href')
+    print("用户的评论：{}".format(content))
+    print("用户的昵称: {}".format(nikename))
+    # 访问用户的主页
+    driver.get(userinfo)
+    try:
+        city = driver.find_element_by_xpath('//*[@id="profile"]/div/div[2]/div[1]/div/a').text
+    except Exception as Err:
+        # print(Err)
+        city = ""
+    finally:
+        print("用户的居住地：{}".format(city))
+    print("-"*60)
+    # 从当前的用户主页后退一下
+    driver.back()
