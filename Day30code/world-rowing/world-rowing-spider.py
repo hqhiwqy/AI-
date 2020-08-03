@@ -82,8 +82,9 @@ def save_file(data):
                              item['position'],
                              item['img_url']])
         print("数据全部保存成功！")
+
+
 def main():
-    pass
     # 1.爬取网页
     url = "http://www.worldrowing.com/events/2018-world-rowing-under-23-championships/u23-mens-eight/"
     headers = {
