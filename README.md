@@ -154,3 +154,7 @@ https://github.com/ai-course-team/Day30
 Day31
 编写简单爬虫架构
 https://github.com/ai-course-team/Day31
+
+Day32
+爬取动态网页
+https://github.com/ai-course-team/Day32
