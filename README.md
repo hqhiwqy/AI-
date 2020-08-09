@@ -162,3 +162,15 @@ https://github.com/ai-course-team/Day31
 Day32
 爬取动态网页
 https://github.com/ai-course-team/Day32
+
+Day33
+图像识别与文字处理
+https://github.com/ai-course-team/Day33
+
+Day34
+存储爬虫数据
+https://github.com/ai-course-team/Day34
+
+Day35
+爬虫框架Scrapy入门
+https://github.com/ai-course-team/Day35
